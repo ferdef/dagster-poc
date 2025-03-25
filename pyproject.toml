@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dental_ml_poc"
+version = "0.1.0"
+authors = [
+    {name = "ferdef", email = ""},
+]
+description = "Dental ML Pipeline PoC with Dagster"
+requires-python = ">=3.8,<3.12"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+]
+
+[tool.setuptools.packages.find]
+exclude = ["docs*", "tests*"]

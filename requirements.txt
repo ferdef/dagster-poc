@@ -1,0 +1,15 @@
+# Dependencias actualizadas de Dagster
+dagster==1.8.5
+dagit==1.8.5
+
+# Dependencias para procesamiento de datos
+numpy==1.26.0
+pandas==2.1.1
+scipy==1.11.3
+
+# Dependencias para visualización
+matplotlib==3.8.0
+pillow==10.0.1
+
+# Otras dependencias útiles
+scikit-learn==1.3.1

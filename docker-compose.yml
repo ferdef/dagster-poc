@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  # Dagster UI server (frontend)
+  dagit:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - dagster-storage:/app/storage
+    environment:
+      - DAGSTER_HOME=/app
+      - PYTHONUNBUFFERED=1
+    command: dagit -h 0.0.0.0 -p 3000 -w /app/workspace.yaml
+    depends_on:
+      - dagster-daemon
+
+  # Dagster daemon (background scheduler & event processor)
+  dagster-daemon:
+    build: .
+    volumes:
+      - .:/app
+      - dagster-storage:/app/storage
+    environment:
+      - DAGSTER_HOME=/app
+      - PYTHONUNBUFFERED=1
+    command: dagster-daemon run
+    restart: on-failure
+
+volumes:
+  # Shared storage volume for runs, events, etc.
+  dagster-storage:
