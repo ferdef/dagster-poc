@@ -8,7 +8,7 @@ services:
       - "3000:3000"
     volumes:
       - .:/app
-      - dagster-storage:/app/storage
+      - ./storage:/app/storage
     environment:
       - DAGSTER_HOME=/app
       - PYTHONUNBUFFERED=1
@@ -21,13 +21,9 @@ services:
     build: .
     volumes:
       - .:/app
-      - dagster-storage:/app/storage
+      - ./storage:/app/storage
     environment:
       - DAGSTER_HOME=/app
       - PYTHONUNBUFFERED=1
     command: dagster-daemon run
     restart: on-failure
-
-volumes:
-  # Shared storage volume for runs, events, etc.
-  dagster-storage:

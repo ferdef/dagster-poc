@@ -1,18 +1,7 @@
-"""
-Dagster repository definition for phase 3.
-Updated to be compatible with Dagster 1.8.5
-"""
+from .assets import *
+from .sensors import *
+from .jobs import *
 from dagster import Definitions
-
-# Import assets directly from the module
-from .ios_scan import ios_scan_data
-from .cbct_scan import cbct_scan_data
-from .ios_segment_teeth import ios_segmentation
-from .cbct_segment_teeth import cbct_teeth_segmentation
-from .cbct_gum_region import cbct_gum_detection
-from .cbct_nerve_channels import cbct_nerve_detection
-from .alignment import aligned_model
-from .crown_design import crown_design
 
 
 # Define Dagster definitions with explicitly listed assets
@@ -27,4 +16,24 @@ defs = Definitions(
         aligned_model,
         crown_design
     ],
+    sensors=[
+      cbct_scan_data_sensor,
+      cbct_teeth_seg_sensor,
+      cbct_gum_seg_sensor,
+      ios_scan_data_sensor,
+      alignment_sensor,
+      crown_design_sensor
+    ],
+    jobs=[
+      materialize_all_job,
+      starting_job,
+      cbct_scan_job,
+      cbct_teeth_seg_job,
+      cbct_gum_seg_job,
+      cbct_nerve_seg_job,
+      ios_scan_job,
+      ios_seg_job,
+      alignment_job,
+      crown_design_job
+    ]
 )

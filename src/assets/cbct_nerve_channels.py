@@ -8,9 +8,9 @@ from dagster import (
     get_dagster_logger,
     AssetKey
 )
-from .constants import CBCT_NERVE_DETECTION_TIME, GROUP_SEGMENTATION
-from .safe_data import safe_float
-from .segmentation_result import SegmentationResult
+from ..constants import CBCT_NERVE_DETECTION_TIME, GROUP_SEGMENTATION
+from ..safe_data import safe_float
+from ..segmentation_result import SegmentationResult
 from .cbct_scan import cbct_scan_data
 from .cbct_gum_region import cbct_gum_key
 

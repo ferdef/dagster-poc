@@ -6,7 +6,7 @@ from dagster import (
     MetadataValue,
     get_dagster_logger,
 )
-from .constants import *
+from ..constants import *
 from .ios_segment_teeth import ios_segmentation
 from .cbct_nerve_channels import cbct_nerve_key
 from .cbct_gum_region import cbct_gum_key

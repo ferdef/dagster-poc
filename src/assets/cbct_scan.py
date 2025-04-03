@@ -5,9 +5,9 @@ from dagster import (
     MetadataValue,
     get_dagster_logger
 )
-from .constants import GROUP_INPUT, CBCT_LOAD_TIME
-from .safe_data import safe_float
-from .dental_scan import DentalScan
+from ..constants import GROUP_INPUT, CBCT_LOAD_TIME
+from ..safe_data import safe_float
+from ..dental_scan import DentalScan
 
 logger = get_dagster_logger()
 

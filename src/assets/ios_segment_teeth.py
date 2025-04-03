@@ -7,10 +7,10 @@ from dagster import (
     MetadataValue,
     get_dagster_logger
 )
-from .constants import IOS_SEGMENTATION_TIME, GROUP_SEGMENTATION
-from .safe_data import safe_float
-from .dental_scan import DentalScan
-from .segmentation_result import SegmentationResult
+from ..constants import IOS_SEGMENTATION_TIME, GROUP_SEGMENTATION
+from ..safe_data import safe_float
+from ..dental_scan import DentalScan
+from ..segmentation_result import SegmentationResult
 from .ios_scan import ios_scan_data
 
 logger = get_dagster_logger()

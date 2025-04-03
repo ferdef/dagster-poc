@@ -7,7 +7,7 @@ from dagster import (
     get_dagster_logger,
 
 )
-from .constants import CROWN_DESIGN_TIME, OUTPUT_FILE_EXTENSION, GROUP_OUTPUT
+from ..constants import CROWN_DESIGN_TIME, OUTPUT_FILE_EXTENSION, GROUP_OUTPUT
 from .ios_segment_teeth import ios_segmentation
 from .cbct_segment_teeth import cbct_teeth_key
 

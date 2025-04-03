@@ -7,9 +7,9 @@ from dagster import (
     get_dagster_logger
 )
 
-from .constants import IOS_LOAD_TIME, GROUP_INPUT
-from .safe_data import safe_float
-from .dental_scan import DentalScan
+from ..constants import IOS_LOAD_TIME, GROUP_INPUT
+from ..safe_data import safe_float
+from ..dental_scan import DentalScan
 
 logger = get_dagster_logger()
 
